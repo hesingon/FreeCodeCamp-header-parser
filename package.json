@@ -6,10 +6,11 @@
     "start": "node ./bin/www"
   },
   "dependencies": {
-    "debug": "~2.6.3",
     "body-parser": "1.0.0",
+    "debug": "~2.6.3",
     "express": "~4.15.2",
     "jade": "~1.11.0",
-    "morgan": "~1.8.1"
+    "morgan": "~1.8.1",
+    "request-ip": "^2.0.1"
   }
 }
