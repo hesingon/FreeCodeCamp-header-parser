@@ -2,9 +2,6 @@ var express = require("express");
 var router = express.Router();
 var requestIP = require("request-ip")
 
-var app = express()
-app.enable('trust proxy')
-
 /* GET home page. */
 router.get('/', function(req, res) {
 
@@ -14,7 +11,7 @@ router.get('/', function(req, res) {
   var ip2 = req.headers['x-forwarded-for'] || req.connection.remoteAddress
   var trimmedIP = req.ip.replace(/(.*)\:(.*)\:(.*)\:/, '')
 
-  var result = {'ipaddress1' : trimmedIP ,'ipaddress2' : ip2 , 'ipaddress3' : req.ip ,'Language' : language, 'software': software };
+  var result = {'ipaddress1' : trimmedIP ,'ipaddress2' : ip2,'Language' : language, 'software': software };
 
   res.json(result);
   //console.log(JSON.stringify(req.headers));
