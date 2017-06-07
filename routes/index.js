@@ -10,12 +10,14 @@ router.get('/', function(req, res) {
   var ip = requestIP.getClientIp(req)
   var trimmedIP = req.ip.replace(/(.*)\:(.*)\:(.*)\:/, '')
 
-  var result = {'ipaddress' : req.ip ,'Language' : language, 'software': software };
+  var result = {'ipaddress' : trimmedIP ,'Language' : language, 'software': software };
 
   res.json(result);
   //console.log(JSON.stringify(req.headers));
-  console.log(trimmedIP)
-  console.log(req.ip)
+  //var str = '::ffff:10.71.208.122'.replace(/(.*)\:(.*)\:(.*)\:/, '')
+  //console.log("check if trimmed: " + str)
+  //console.log(trimmedIP)
+  //console.log(req.ip)
 
 });
 module.exports = router;
