@@ -11,15 +11,10 @@ router.get('/', function(req, res) {
   var ip2 = req.headers['x-forwarded-for'] || req.connection.remoteAddress
   var trimmedIP = req.ip.replace(/(.*)\:(.*)\:(.*)\:/, '')
 
-  var result = {'ipaddress1' : trimmedIP ,'ipaddress2' : ip2,'Language' : language, 'software': software };
+  var result = {'ipaddress' : trimmedIP ,'XFF-ipaddress' : ip2,'Language' : language, 'software': software };
 
   res.json(result);
-  //console.log(JSON.stringify(req.headers));
-  //var str = '::ffff:10.71.208.122'.replace(/(.*)\:(.*)\:(.*)\:/, '')
-  //console.log("check if trimmed: " + str)
-  //console.log(trimmedIP)
-  //console.log(req.ip)
-
+  
 });
 module.exports = router;
 
