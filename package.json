@@ -9,6 +9,7 @@
     "body-parser": "1.0.0",
     "debug": "~2.6.3",
     "express": "~4.15.2",
+    "express-ipv4": "0.0.1",
     "jade": "~1.11.0",
     "morgan": "~1.8.1",
     "request-ip": "^2.0.1"
